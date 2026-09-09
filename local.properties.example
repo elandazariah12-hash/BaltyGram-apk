@@ -1,0 +1,3 @@
+# Rename this file to local.properties and point it at your Android SDK location.
+# In AIDE this is usually handled automatically - you may not need this file at all.
+sdk.dir=/path/to/your/Android/sdk
