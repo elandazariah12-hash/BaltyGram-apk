@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="4dp">
+
+        <ImageButton
+            android:id="@+id/btn_back_activity"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_new_title"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/slate_900" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/step_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:text="Step 1 of 6 - Project name"
+        android:textColor="@color/brand_600"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ViewFlipper
+            android:id="@+id/view_flipper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Step 1: Project name -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <EditText
+                    android:id="@+id/input_project_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:hint="e.g. PixelPaint Pro"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Step 2: Description -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <EditText
+                    android:id="@+id/input_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:minLines="5"
+                    android:gravity="top"
+                    android:hint="What does it do?"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Step 3: Category + Platform -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Submission type" android:textSize="12sp" android:textColor="@color/slate_600" android:layout_marginBottom="4dp" />
+                <Spinner
+                    android:id="@+id/spinner_kind"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Platform" android:textSize="12sp" android:textColor="@color/slate_600" android:layout_marginTop="16dp" android:layout_marginBottom="4dp" />
+                <Spinner
+                    android:id="@+id/spinner_platform"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input" />
+
+                <TextView
+                    android:id="@+id/platform_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Source code isn't tied to a device platform, so this is disabled."
+                    android:textSize="11sp"
+                    android:textColor="@color/slate_400"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Step 4: Icon -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="This shows up on Discover and Home. Square images work best." android:textSize="12sp" android:textColor="@color/slate_500" android:layout_marginBottom="16dp" />
+                <ImageView
+                    android:id="@+id/icon_preview"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:background="@drawable/bg_icon_tile"
+                    android:padding="24dp"
+                    android:src="@drawable/ic_package" />
+                <Button
+                    android:id="@+id/btn_choose_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Choose icon"
+                    android:textAllCaps="false"
+                    android:background="@drawable/bg_button_secondary" />
+            </LinearLayout>
+
+            <!-- Step 5: Screenshots -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Up to 5 screenshots. Optional, but listings with screenshots get more downloads." android:textSize="12sp" android:textColor="@color/slate_500" android:layout_marginBottom="12dp" />
+                <LinearLayout
+                    android:id="@+id/screenshots_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+                <Button
+                    android:id="@+id/btn_add_screenshots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Add screenshots"
+                    android:textAllCaps="false"
+                    android:background="@drawable/bg_button_secondary" />
+            </LinearLayout>
+
+            <!-- Step 6: File + ownership + submit -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <Button
+                    android:id="@+id/btn_choose_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:text="Tap to choose a file (APK, ZIP, EXE, and more)"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:background="@drawable/bg_input" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_ownership"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="I own this content, or I have explicit permission to distribute it on BaltyGram."
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/wizard_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/red_600"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </ViewFlipper>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btn_wizard_back"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="@string/action_back"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_button_secondary"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btn_wizard_next"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="@string/action_next"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_button_primary" />
+    </LinearLayout>
+
+</LinearLayout>

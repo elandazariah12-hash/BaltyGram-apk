@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account"
+            android:textColor="@color/slate_900"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- ============ AUTH: SIGNUP ============ -->
+        <LinearLayout
+            android:id="@+id/signup_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Create account" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/slate_900" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_marginBottom="12dp" android:text="Join BaltyGram to upload and download software." android:textSize="12sp" android:textColor="@color/slate_500" />
+
+            <EditText android:id="@+id/signup_email" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="Email" android:inputType="textEmailAddress" android:layout_marginBottom="8dp" />
+            <EditText android:id="@+id/signup_password" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="Password (min 8 characters)" android:inputType="textPassword" android:layout_marginBottom="12dp" />
+
+            <Button android:id="@+id/btn_signup" android:layout_width="match_parent" android:layout_height="46dp" android:text="@string/action_signup" android:textAllCaps="false" android:textColor="@color/white" android:background="@drawable/bg_button_primary" />
+
+            <TextView android:id="@+id/show_login" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="12dp" android:text="Already have an account? Login" android:textColor="@color/brand_600" android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- ============ AUTH: LOGIN ============ -->
+        <LinearLayout
+            android:id="@+id/login_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Welcome back" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/slate_900" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_marginBottom="12dp" android:text="Log in to your BaltyGram account." android:textSize="12sp" android:textColor="@color/slate_500" />
+
+            <EditText android:id="@+id/login_email" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="Email" android:inputType="textEmailAddress" android:layout_marginBottom="8dp" />
+            <EditText android:id="@+id/login_password" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="Password" android:inputType="textPassword" android:layout_marginBottom="12dp" />
+
+            <Button android:id="@+id/btn_login" android:layout_width="match_parent" android:layout_height="46dp" android:text="@string/action_login" android:textAllCaps="false" android:textColor="@color/white" android:background="@drawable/bg_button_primary" />
+
+            <TextView android:id="@+id/show_signup" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="12dp" android:text="New here? Create an account" android:textColor="@color/brand_600" android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- ============ PROFILE (logged in) ============ -->
+        <LinearLayout
+            android:id="@+id/profile_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <FrameLayout android:layout_width="72dp" android:layout_height="72dp">
+                    <ImageView
+                        android:id="@+id/avatar_preview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_avatar_circle"
+                        android:padding="18dp"
+                        android:src="@drawable/ic_account" />
+                    <ImageView
+                        android:id="@+id/btn_change_avatar"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="bottom|end"
+                        android:background="@drawable/bg_avatar_circle"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_camera" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical">
+
+                    <TextView android:id="@+id/profile_email" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:textSize="14sp" android:textColor="@color/slate_900" />
+
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="4dp">
+                        <TextView android:id="@+id/badge_founder" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FOUNDER" android:textColor="@color/white" android:textSize="9sp" android:textStyle="bold" android:background="@drawable/bg_badge_founder" android:paddingStart="8dp" android:paddingEnd="8dp" android:paddingTop="2dp" android:paddingBottom="2dp" android:visibility="gone" android:layout_marginEnd="6dp" />
+                        <TextView android:id="@+id/badge_admin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ADMIN" android:textColor="@color/white" android:textSize="9sp" android:textStyle="bold" android:background="@color/slate_800" android:paddingStart="8dp" android:paddingEnd="8dp" android:paddingTop="2dp" android:paddingBottom="2dp" android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="4dp">
+                <EditText android:id="@+id/input_username" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="Username (3-30 chars, letters/numbers/_)" />
+                <ImageView android:id="@+id/username_check_icon" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:visibility="gone" />
+            </LinearLayout>
+            <TextView android:id="@+id/username_msg" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="11sp" android:layout_marginBottom="8dp" />
+
+            <EditText android:id="@+id/input_full_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="Full name" android:layout_marginBottom="8dp" />
+            <EditText android:id="@+id/input_display_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="Display name (optional)" android:layout_marginBottom="8dp" />
+            <EditText android:id="@+id/input_bio" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="Bio (optional)" android:minLines="2" android:layout_marginBottom="8dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Social links (optional)" android:textStyle="bold" android:textSize="12sp" android:textColor="@color/slate_700" android:layout_marginTop="8dp" android:layout_marginBottom="8dp" />
+            <EditText android:id="@+id/input_instagram" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="Instagram" android:layout_marginBottom="8dp" />
+            <EditText android:id="@+id/input_whatsapp" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="WhatsApp" android:layout_marginBottom="8dp" />
+            <EditText android:id="@+id/input_telegram" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="Telegram" android:layout_marginBottom="8dp" />
+            <EditText android:id="@+id/input_website" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_input" android:padding="12dp" android:hint="Website URL" android:layout_marginBottom="16dp" />
+
+            <Button android:id="@+id/btn_save_profile" android:layout_width="match_parent" android:layout_height="46dp" android:text="@string/action_save" android:textAllCaps="false" android:textColor="@color/white" android:background="@drawable/bg_button_primary" android:layout_marginBottom="12dp" />
+
+            <TextView android:id="@+id/btn_logout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/action_logout" android:textColor="@color/red_600" android:textStyle="bold" android:textSize="13sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

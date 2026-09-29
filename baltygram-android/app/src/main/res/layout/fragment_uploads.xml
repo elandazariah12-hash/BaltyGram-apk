@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Uploads"
+        android:textColor="@color/slate_900"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/cap_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="12sp"
+        android:background="@drawable/bg_input"
+        android:layout_marginBottom="12dp"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_uploads"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/empty_uploads_title"
+        android:gravity="center"
+        android:textColor="@color/slate_400"
+        android:padding="32dp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_new_upload"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:text="+ New Upload"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_button_primary" />
+
+</LinearLayout>

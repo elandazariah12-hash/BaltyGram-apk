@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BaltyGram</string>
+    <string name="app_slogan">Connect. Share. Discover.</string>
+    <string name="splash_by">By</string>
+    <string name="splash_creator">Xetsu</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_discover">Discover</string>
+    <string name="nav_uploads">Uploads</string>
+    <string name="nav_downloads">Downloads</string>
+    <string name="nav_account">Account</string>
+
+    <string name="upload_new_title">New Submission</string>
+    <string name="notifications_title">Notifications</string>
+
+    <string name="action_login">Log in</string>
+    <string name="action_signup">Create account</string>
+    <string name="action_logout">Log out</string>
+    <string name="action_save">Save profile</string>
+    <string name="action_download">Download</string>
+    <string name="action_favorite">Favorite</string>
+    <string name="action_follow">Follow</string>
+    <string name="action_submit_review">Submit review</string>
+    <string name="action_next">Next</string>
+    <string name="action_back">Back</string>
+    <string name="action_finish">Finish</string>
+
+    <string name="empty_home_title">The community is just getting started</string>
+    <string name="empty_home_body">Be one of the first to upload your software, app, game or tool.</string>
+    <string name="empty_discover_title">Nothing here yet</string>
+    <string name="empty_uploads_title">No uploads yet</string>
+    <string name="empty_downloads_title">No downloads yet</string>
+</resources>
